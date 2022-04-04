@@ -1,0 +1,26 @@
+body {
+    border: 3px solid blue;
+    text-align: left;
+    border-radius: 15px;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+}
+
+button {
+    width: 150px;
+    height: 30px;
+    border-radius: 8px;
+}
+
+#mood {
+    width: 150px;
+    height:25px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+p {
+    padding: 10px;
+    background-color:aqua
+  }
