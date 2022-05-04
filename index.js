@@ -2,6 +2,8 @@ const { config } = require('dotenv');
 const express = require('express');
 const Datastore = require('nedb');
 const fetch = require('node-fetch');
+
+// Instructs the server to load contents of the .env file into an environment variable
 require('dotenv').config();
 
 //console.log(process.env);
@@ -19,7 +21,7 @@ app.use(express.json({ limit: '1mb' }));
 const database = new Datastore('database.db');
 database.loadDatabase();
 
-
+// Endpoint on server to post data into the database
 app.post('/api', (request, response) => {
     const data = request.body;
     const timestamp = Date.now();
@@ -28,7 +30,9 @@ app.post('/api', (request, response) => {
     response.json(data);
   });
 
+// Endpoint on server to get data from the database
 app.get('/api', (request, response) => {
+    // Specify all data
     database.find({}, (err, data) => {
         if (err) {
             response.end();
@@ -38,6 +42,7 @@ app.get('/api', (request, response) => {
     });
 });
 
+// Endpoint on server to get data from weather and air quality apis
 app.get('/weather/:latlonUnits', async (request, response) => {
     console.log(request.params);
     const latlonUnits =  request.params.latlonUnits.split(',');
@@ -47,6 +52,7 @@ app.get('/weather/:latlonUnits', async (request, response) => {
     const Units = latlonUnits[2];
     console.log(lat, lon, Units);
 
+    // Pull the API key from the environment variable
     const API_Key = process.env.API_KEY;
     const weather_url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_Key}&units=${Units}`;
     const weather_response = await fetch(weather_url);
@@ -58,8 +64,10 @@ app.get('/weather/:latlonUnits', async (request, response) => {
 
     const data = {
         weather: weather_data,
-        air_quality: aq_data
+        air_quality: aq_data,
     }
+    const timestamp = Date.now();
+    data.timestamp = timestamp;
 
     response.json(data);
 });

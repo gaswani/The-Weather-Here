@@ -18,7 +18,7 @@
         <style>
             #checkinMap {
                 height: 340px;
-                width: 600px;
+                width: 680px;
                 margin: 8px 0px;
             }
         </style>
@@ -26,9 +26,12 @@
         <title>Document</title>
     </head>
     <body>
-        <h1>The Weather Here</h1>
-        <div><a href="/">Check in</a> | <a href="/logs">View Checkins</a></div>
-        <div id="checkinMap"></div>
+        <div class="main">
+            <h1>The Weather Here Project</h1>
+            <!--div><a href="/">Check in</a> | <a href="/logs">View Checkins</a></div-->
+            <div><a href="/"><button type="button" class="btn">Check In</button></a><a href="/logs"><button type="button" class="btn">View Checkins</button></a></div>
+            <div id="checkinMap"></div>
+        </div>
         <script src="logs.js"></script>
     </body>
 </html>

@@ -9,18 +9,25 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>The Weather Here</h1>
-    <div><a href="/">Check in</a> | <a href="/logs">View Checkins</a></div>
-    <p>
-      latitude: <span id="latitude"></span>&deg;<br />
-      longitude: <span id="longitude"></span>&deg;
-    </p>
-    <p>
-      The atmospheric pressure here is <span id ="pressure"></span> mBar with a temperature of <span id ="temperature"></span>&deg; Celsius.
-      <br>
-      The concentration of particulate matter (pm25) is <span id="aq_parameter"></span> and the air quality index is <span id="aq_value"></span><br>
-      These readings were recorded at <span id="time"></span>
-    </p>
-    <script src="sketch.js"></script>
+    <div class="main">
+      <h1>The Weather Here Project</h1>
+      <div><a href="/"><button type="button" class="btn">Check In</button></a><a href="/logs"><button type="button" class="btn">View Checkins</button></a></div>
+      <p id="latlon">
+        latitude: <span id="latitude"></span>&deg;<br />
+        longitude: <span id="longitude"></span>&deg;
+      </p>
+      <div class="grid-container">
+        <div class="grid-item"><img src="./Images/weather-icon.jpeg" alt="" width="75px" height="75px" /><br><p>The weather here in <span id="city"></span> is <span id="summary"></span></p></div>
+        <div class="grid-item"><img src="./Images/air_quality-icon.png" alt="" width="75px" height="75px" /><p>Air Quality Index is <span id="aq_value"></span></p></div>
+        <div class="grid-item"><img src="./Images/Barometer.jpeg" alt="" width="75px" height="75px" /><p>Barometric Pressure <span id ="pressure"></span> mBar</p></div>  
+        <div class="grid-item"><img src="./Images/hygrometer-1.jpeg" alt="" width="75px" height="75px" /><br><p>Relative Humidity <span id="humidity"></span> %</p></div>
+        <div class="grid-item"><img src="./Images/particulate-icon.png" alt="" width="75px" height="75px" /><p>Concentration of Particulate Matter (pm25) <span id="aq_parameter"></span></p></div>
+        <div class="grid-item"><img src="./Images/weather-thermometer.jpeg" alt="" width="75px" height="75px" /><p>It feels like <span id ="temperature"></span>&deg; Celsius.</p></div> 
+        <div class="grid-item"><img src="./Images/Wind.png" alt="" width="75px" height="75px" /><p>Wind Speed <span id="wind_speed"></span> Km/hr </p></div>
+        <div class="grid-item"><img src="./Images/visibility.png" alt="" width="75px" height="60px" /><p>Visibility <span id="visibility"></span> m </p></div>
+        <div class="grid-item"><img src="./Images/time-icon.png" alt="" width="75px" height="75px" /><p>Date & time <span id="time"></span></p></div> 
+    </div>
+      <script src="sketch.js"></script>
+    </div>
   </body>
 </html>

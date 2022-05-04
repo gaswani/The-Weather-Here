@@ -1,16 +1,52 @@
 body {
-    border: 3px solid blue;
     text-align: left;
-    border-radius: 15px;
     margin-top: 15px;
     padding-bottom: 15px;
     padding-left: 10px;
+    font-family:sans-serif;
+    
+}
+
+.main {
+    border: 3px solid blue;
+    background-image: url("./Images/Weather-Theme.jpeg");
+    background-size: cover;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: white;
+    padding: 5px;
+    border-radius: 15px;
+}
+.grid-item {
+    background-color: rgba(248, 242, 242, 0.876);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 16px;
+    align-items: center;
+    display: flex;
+    border-radius: 15px;
+    margin:2px;
+    background-image: url("./Images/background-gif4.GIF");
+    background-size: cover;
+    border-color: blue;
+    border-width: 1px;
+}
+
+img {
+    margin: 15px;
+    border-radius: 15px;
 }
 
 button {
     width: 150px;
     height: 30px;
     border-radius: 8px;
+    margin-left: 2px;
 }
 
 #mood {
@@ -20,7 +56,19 @@ button {
     padding-left: 10px;
 }
 
-p {
-    padding: 10px;
-    background-color:aqua
-  }
+#latlon {
+    color:azure
+}
+
+h1 {
+    font-family: monospace;
+    color: orangered;
+}
+
+.btn {
+    cursor: pointer;
+    width: 115px;
+    background-color: aqua;
+}
+
+
