@@ -9,6 +9,9 @@ require('dotenv').config();
 //console.log(process.env);
 
 const app = express();
+
+// Webhosting platforms will automatically generate a port
+// Specify port in the environment variable or assign a hard coded port
 const port = process.env.PORT || 4000;
 
 app.listen(port, (()=>{
